@@ -5,18 +5,18 @@ Partial Class myForm
     Inherits System.Web.UI.Page
     Dim mycon As New CommonDB
     Protected Function getUserID() As Integer
-        mycon.openConnection()
-        Dim max As Integer
-        Dim cmd As New SqlCommand("Select MAX(COALESCE(UserId,0)) from UserMaster", mycon.con)
-        If IsDBNull(cmd.ExecuteScalar()) Then
-            max = 0
-        Else
-            max = cmd.ExecuteScalar()
-        End If
+        'mycon.openConnection()
+        'Dim max As Integer
+        'Dim cmd As New SqlCommand("Select MAX(COALESCE(UserId,0)) from UserMaster", mycon.con)
+        'If IsDBNull(cmd.ExecuteScalar()) Then
+        '    max = 0
+        'Else
+        '    max = cmd.ExecuteScalar()
+        'End If
 
-        mycon.closeConnection()
-        Return max + 1
-
+        'mycon.closeConnection()
+        'Return max + 1
+        Return 0
     End Function
     Protected Sub btnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSubmit.Click
         Try
@@ -68,7 +68,7 @@ Partial Class myForm
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
-            txtUserId.Text = getUserID()
+            '   txtUserId.Text = getUserID()
         End If
 
     End Sub

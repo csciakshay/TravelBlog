@@ -56,7 +56,7 @@ Partial Class travelEntry
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         txtUserId.Text = 1
-        txtTravelId.Text = getTravelID()
+        'txtTravelId.Text = getTravelID()
 
     End Sub
 End Class
